@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Trainer A1–C2 · Entrenador de Inglés</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">EN</span>
+    <div class="brand-text">
+      <h1>English Trainer</h1>
+      <p class="tagline" data-es="Del A1 al C2, sin conexión, sin costo." data-en="A1 to C2, offline, free.">Del A1 al C2, sin conexión, sin costo.</p>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <button id="insights-btn" class="pill-btn" title="Ver estadísticas y dejar comentarios / View stats and leave feedback" data-es="📊 Progreso" data-en="📊 Progress">📊 Progreso</button>
+    <button id="lang-toggle" class="pill-btn" title="Cambiar idioma de la interfaz / Switch interface language">ES / EN</button>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- LEVEL MAP -->
+  <section id="view-levels" class="view">
+    <h2 data-es="Elige tu nivel" data-en="Choose your level">Elige tu nivel</h2>
+    <p class="subtext" data-es="Cada nivel sigue el Marco Común Europeo (CEFR). Empieza donde te sientas cómodo — no hay apuro." data-en="Each level follows the CEFR framework. Start wherever feels right — there's no rush.">Cada nivel sigue el Marco Común Europeo (CEFR). Empieza donde te sientas cómodo — no hay apuro.</p>
+    <div id="level-grid" class="level-grid"></div>
+  </section>
+
+  <!-- SKILL MAP FOR A LEVEL -->
+  <section id="view-skills" class="view hidden">
+    <button class="back-btn" data-back="levels">← <span data-es="Niveles" data-en="Levels">Niveles</span></button>
+    <h2 id="skills-title"></h2>
+    <div id="skill-grid" class="skill-grid"></div>
+  </section>
+
+  <!-- EXERCISE SESSION -->
+  <section id="view-session" class="view hidden">
+    <button class="back-btn" data-back="skills">← <span data-es="Volver" data-en="Back">Volver</span></button>
+    <div class="session-bar">
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      <span id="session-counter">0 / 0</span>
+    </div>
+    <div id="exercise-card" class="exercise-card"></div>
+  </section>
+
+  <!-- SESSION RESULT -->
+  <section id="view-result" class="view hidden">
+    <div class="result-card">
+      <h2 id="result-title"></h2>
+      <p id="result-detail"></p>
+      <div class="result-actions">
+        <button id="retry-btn" class="primary-btn" data-es="Repetir" data-en="Retry">Repetir</button>
+        <button id="continue-btn" class="ghost-btn" data-es="Seguir" data-en="Continue">Seguir</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS / FEEDBACK -->
+  <section id="view-insights" class="view hidden">
+    <button class="back-btn" data-back="levels">← <span data-es="Niveles" data-en="Levels">Niveles</span></button>
+    <h2 data-es="Tu progreso" data-en="Your progress">Tu progreso</h2>
+    <p class="subtext" data-es="Estos son los puntos gramaticales donde más te equivocas. Compártelos para ayudar a mejorar el curso." data-en="These are the grammar points you struggle with most. Share them to help improve the course.">Estos son los puntos gramaticales donde más te equivocas. Compártelos para ayudar a mejorar el curso.</p>
+
+    <div id="insights-empty" class="subtext hidden" data-es="Aún no hay suficientes datos. ¡Completa algunos ejercicios primero!" data-en="Not enough data yet. Complete a few exercises first!">Aún no hay suficientes datos. ¡Completa algunos ejercicios primero!</div>
+    <div id="insights-list" class="insights-list"></div>
+
+    <div class="feedback-block">
+      <h3 data-es="¿Algo más que quieras contarnos?" data-en="Anything else you'd like to tell us?">¿Algo más que quieras contarnos?</h3>
+      <p class="subtext small" data-es="Ej: qué frase te confundió, qué palabra no entendiste, qué te gustaría practicar más." data-en="E.g. which sentence confused you, which word you didn't understand, what you'd like to practice more.">Ej: qué frase te confundió, qué palabra no entendiste, qué te gustaría practicar más.</p>
+      <textarea id="feedback-text" class="feedback-textarea" rows="4"></textarea>
+      <div class="feedback-actions">
+        <button id="save-feedback-btn" class="primary-btn" data-es="Guardar comentario" data-en="Save comment">Guardar comentario</button>
+        <button id="export-btn" class="ghost-btn" data-es="Exportar y compartir" data-en="Export & share">Exportar y compartir</button>
+      </div>
+      <p id="feedback-saved-msg" class="feedback-saved-msg hidden" data-es="¡Guardado! Gracias por ayudar a mejorar el curso." data-en="Saved! Thanks for helping improve the course.">¡Guardado! Gracias por ayudar a mejorar el curso.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footbar">
+  <p data-es="Hecho para aprender inglés sin barreras económicas. 100% offline." data-en="Built to learn English with no economic barriers. 100% offline.">Hecho para aprender inglés sin barreras económicas. 100% offline.</p>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/data.js"></script>
+<script src="js/exercises.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
